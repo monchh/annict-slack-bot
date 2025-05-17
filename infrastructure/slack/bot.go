@@ -155,13 +155,6 @@ func (b *Bot) handleAppMention(ctx context.Context, event *slackevents.AppMentio
 	}
 
 	textContent := strings.ToLower(strings.TrimSpace(event.Text))
-	// check for textContext is one of annictcmd.Command
-	// For example, check for excessive length or special characters
-	if len(textContent) > 200 || strings.ContainsAny(textContent, "`~!@#$%^&*()_+=-[]\\|}{;':\",./<>?") {
-		slog.Warn(fmt.Sprintf("Received potentially unsafe command: %q from %s in %s", textContent, event.User, event.Channel))
-		return // Silently ignore
-	}
-
 	if strings.Contains(textContent, annictcmd.ANNICT_TODAY) {
 		slog.Info(fmt.Sprintf("Received command: '%s'", annictcmd.ANNICT_TODAY))
 
