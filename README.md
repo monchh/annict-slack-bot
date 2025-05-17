@@ -70,7 +70,7 @@ The bot reacts to specified commands, utilizes Annict's GraphQL API to retrieve 
 
 1.  **Build:**
     ```bash
-    go build -o annict-slack-bot ./cmd/annict-slack-bot
+    go build -o annict-slack-bot ./cmd
     ```
 2.  **Run:**
 

@@ -70,7 +70,7 @@ Slack で `@<bot名> annict today` とメンションすると、Annict API か�
 
 1.  **ビルド:**
     ```bash
-    go build -o annict-slack-bot ./cmd/annict-slack-bot
+    go build -o annict-slack-bot ./cmd
     ```
 2.  **実行:**
 
