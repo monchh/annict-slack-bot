@@ -1,0 +1,30 @@
+query GetLibraryEntries($seasons: [String!]) {
+  viewer {
+    libraryEntries(
+      states: [WATCHING, WANNA_WATCH]
+      seasons: $seasons
+      orderBy: { field: LAST_TRACKED_AT, direction: DESC }
+    ) {
+      nodes {
+        work {
+          title
+          officialSiteUrl
+          image {
+            facebookOgImageUrl
+            recommendedImageUrl
+          }
+        }
+        nextProgram {
+          channel {
+            name
+          }
+          startedAt
+        }
+        nextEpisode {
+          numberText
+          title
+        }
+      }
+    }
+  }
+}

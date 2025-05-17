@@ -1,0 +1,18 @@
+# gqlgenc.yml
+schema:
+  - "schema/annict/schema.graphql" # ダウンロードしたスキーマファイルのパス
+models:
+  Int:
+    model: github.com/99designs/gqlgen/graphql.Int64
+  Date:
+    model: github.com/99designs/gqlgen/graphql.Time
+model:
+  package: annict
+  filename: infrastructure/annict/models.go
+client:
+  package: annict
+  filename: infrastructure/annict/client.go
+query:
+  - "queries/annict/*.graphql"
+generate:
+  clientV2: false # 新しいクライアントジェネレータを使用 (推奨)

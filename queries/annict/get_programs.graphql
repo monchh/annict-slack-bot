@@ -1,0 +1,25 @@
+query GetPrograms {
+  viewer {
+    programs(unwatched: true, orderBy: { field: STARTED_AT, direction: DESC }) {
+      nodes {
+        work {
+          title
+          officialSiteUrl
+          image {
+            facebookOgImageUrl
+            recommendedImageUrl
+          }
+        }
+        startedAt
+        channel {
+          name
+        }
+        episode {
+          number
+          numberText
+          title
+        }
+      }
+    }
+  }
+}
