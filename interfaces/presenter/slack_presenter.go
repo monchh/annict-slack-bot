@@ -11,11 +11,15 @@ import (
 )
 
 // SlackProgramPresenter formats domain entities into Slack Block Kit blocks.
-type SlackProgramPresenter struct{}
+type SlackProgramPresenter struct {
+	annictLimitNumToDisplay int
+}
 
 // NewSlackProgramPresenter creates a new presenter.
-func NewSlackProgramPresenter() *SlackProgramPresenter {
-	return &SlackProgramPresenter{}
+func NewSlackProgramPresenter(limit int) *SlackProgramPresenter {
+	return &SlackProgramPresenter{
+		annictLimitNumToDisplay: limit,
+	}
 }
 
 // FormatCombinedPrograms formats both today's and unwatched programs.
@@ -57,8 +61,8 @@ func (p *SlackProgramPresenter) FormatCombinedPrograms(
 		)
 		blocks = append(blocks, noUnwatchedBlock)
 	} else {
-		// Limit the number of unwatched recommendations shown? e.g., top 5
-		limit := 5
+		// Limit the number of unwatched recommendations shown.
+		limit := p.annictLimitNumToDisplay
 		if len(unwatchedPrograms) > limit {
 			unwatchedPrograms = unwatchedPrograms[:limit]
 			// Add a note that more exist?
