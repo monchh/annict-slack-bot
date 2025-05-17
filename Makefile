@@ -4,7 +4,7 @@ GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
 GOGET=$(GOCMD) get
 BINARY_NAME=annict-slack-bot
-CMD_PATH=./cmd/annict-slack-bot
+CMD_PATH=./cmd
 
 # Default target
 all: build
