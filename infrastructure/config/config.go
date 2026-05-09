@@ -22,6 +22,7 @@ type Config struct {
 	IsDevelopment           bool          `envconfig:"IS_DEVELOPMENT" default:"false"`
 	ImageCheckTimeout       time.Duration `envconfig:"IMAGE_CHECK_TIMEOUT" default:"5s"`
 	ScheduleChannelID       string        `envconfig:"SCHEDULE_CHANNEL_ID"`
+	SlackHomeIotToken       string        `envconfig:"SLACK_HOMEIOT_TOKEN"`
 }
 
 // LoadConfig loads configuration from environment variables (.env fallback).
