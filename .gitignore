@@ -19,6 +19,7 @@
 
 # Build output
 annict-slack-bot
+slack-notifier
 
 # custom rule
 ## backup directories
